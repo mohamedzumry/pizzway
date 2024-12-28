@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="609.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <AnchorPane prefHeight="601.0" prefWidth="863.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="53.0" prefWidth="864.0" style="-fx-background-color: #AD0E0E;" text=" Pizzway" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Label layoutY="579.0" prefHeight="30.0" prefWidth="864.0" style="-fx-background-color: #AD0E0E;" text="  All Right Reserved | Pizzway                                                                                                                " textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="426.0" layoutY="10.0" prefHeight="34.0" prefWidth="73.0" text="Home" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="735.0" layoutY="10.0" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: white;" text=" Order now" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="649.0" layoutY="9.0" prefHeight="34.0" prefWidth="73.0" text="Profile" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="499.0" layoutY="9.0" prefHeight="34.0" prefWidth="73.0" text="Saved" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="573.0" layoutY="9.0" prefHeight="34.0" prefWidth="73.0" text="Orders" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <AnchorPane layoutX="23.0" layoutY="88.0" prefHeight="182.0" prefWidth="376.0" style="-fx-background-color: grey;">
+                    <children>
+                        <Label layoutY="-2.0" prefHeight="38.0" prefWidth="382.0" style="-fx-background-color: #AD0E0E;" text="                             Select Crust" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="58.0" text="Large Crust 250g" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="100.0" text="Medium Crust-150g" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="138.0" text="Small Crust-100g" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <RadioButton fx:id="o_rd_lc" layoutX="345.0" layoutY="67.0" mnemonicParsing="false" />
+                        <RadioButton fx:id="o_rd_mc" layoutX="346.0" layoutY="107.0" mnemonicParsing="false" />
+                        <RadioButton fx:id="o_rd_sc" layoutX="347.0" layoutY="146.0" mnemonicParsing="false" />
+                        <Label layoutX="214.0" layoutY="60.0" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: white;" text="Each 399/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="214.0" layoutY="100.0" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: white;" text="Each 299/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="214.0" layoutY="139.0" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: white;" text="Each 199/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children></AnchorPane>
+                <Button fx:id="o_btn_ro" layoutX="41.0" layoutY="501.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="346.0" text="Review Order" />
+                <AnchorPane layoutX="433.0" layoutY="89.0" prefHeight="182.0" prefWidth="376.0" style="-fx-background-color: grey;">
+                    <children>
+                        <Label layoutY="-2.0" prefHeight="38.0" prefWidth="382.0" style="-fx-background-color: #AD0E0E;" text="                       Select Cheese" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="58.0" text="Mozzarella " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="100.0" text="Gorgonzola" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="138.0" text="Provolone" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="60.0" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: white;" text=" Each 140/- " textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="100.0" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: white;" text=" Each 160/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="139.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: white;" text=" Each 180/-  " textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="o_txt_mc" layoutX="325.0" layoutY="58.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_gc" layoutX="325.0" layoutY="99.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_pc" layoutX="325.0" layoutY="140.0" prefHeight="32.0" prefWidth="45.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="433.0" layoutY="286.0" prefHeight="266.0" prefWidth="382.0" style="-fx-background-color: grey;">
+                    <children>
+                        <Label layoutY="-2.0" prefHeight="38.0" prefWidth="382.0" style="-fx-background-color: #AD0E0E;" text="                       Select Topping" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="58.0" text="Pepperoni" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="100.0" text="Mushrooms" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="138.0" text="Onions" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="184.0" layoutY="60.0" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: white;" text="Each 40/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="182.0" layoutY="100.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: white;" text=" Each 40/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="181.0" layoutY="139.0" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: white;" text=" Each 40/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="o_txt_pt" layoutX="325.0" layoutY="58.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_mt" layoutX="325.0" layoutY="99.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_ot" layoutX="325.0" layoutY="139.0" prefHeight="32.0" prefWidth="45.0" />
+                        <Label layoutX="16.0" layoutY="174.0" text="Sausage" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="211.0" text="Spinach" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="181.0" layoutY="177.0" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: white;" text=" Each 50/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="181.0" layoutY="214.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: white;" text=" Each 80/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="o_txt_st" layoutX="326.0" layoutY="176.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_spt" layoutX="326.0" layoutY="213.0" prefHeight="32.0" prefWidth="45.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="23.0" layoutY="286.0" prefHeight="182.0" prefWidth="376.0" style="-fx-background-color: grey;">
+                    <children>
+                        <Label layoutY="-2.0" prefHeight="38.0" prefWidth="382.0" style="-fx-background-color: #AD0E0E;" text="                       Select Sauce" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="58.0" text="Abbabiata" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="100.0" text="Puttanesca" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="138.0" text="Tuna" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="179.0" layoutY="60.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: white;" text=" Each 140/- " textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="179.0" layoutY="100.0" prefHeight="30.0" prefWidth="119.0" style="-fx-background-color: white;" text=" Each 160/-" textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="180.0" layoutY="140.0" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: white;" text=" Each 170/-  " textFill="#48ff00">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="o_txt_as" layoutX="320.0" layoutY="59.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_ps" layoutX="320.0" layoutY="100.0" prefHeight="32.0" prefWidth="45.0" />
+                        <TextField fx:id="o_txt_ts" layoutX="321.0" layoutY="139.0" prefHeight="32.0" prefWidth="45.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

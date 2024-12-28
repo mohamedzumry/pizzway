@@ -1,0 +1,7 @@
+Pizza Name, Description
+Salamana
+,Pizza with Thick crust, Cheddar cheese, Pesto sauce, toppings: Pepperoni, Mushrooms, Pepperoni, Mushrooms
+Masha Allah
+,Pizza with Thick crust, Mozzarella cheese, Tomato sauce, toppings: Mushrooms, Onions, Bacon
+saved
+,Pizza with Thick crust, Cheddar cheese, Barbecue sauce
