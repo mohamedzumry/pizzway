@@ -1,11 +1,9 @@
 package com.example.pizzway.models;
 
-import com.example.pizzway.patterns.observer.OrderObserver;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer extends User implements OrderObserver {
+public class Customer extends User {
     private String address;
     private int loyaltyPoints;
     private List<String> favorites;
@@ -59,11 +57,6 @@ public class Customer extends User implements OrderObserver {
 
     public void provideFeedback(String feedback) {
         System.out.println("Feedback received: " + feedback);
-    }
-
-    @Override
-    public void update(String status) {
-        System.out.println(getName() + ", your order status is now: " + status);
     }
 }
 

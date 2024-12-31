@@ -5,6 +5,7 @@ import com.example.pizzway.models.LoggedInCustomer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
@@ -23,22 +24,33 @@ public class LoginController {
     private PasswordField txt_login_pass;
 
     @FXML
+    private Button login_button_signup, homeButton;
+
+    @FXML
+    private void goToSignup(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("signup-view.fxml"));
+            Scene signUpScene = new Scene(fxmlLoader.load());
+
+            Stage stage = (Stage) login_button_signup.getScene().getWindow();
+
+            stage.setScene(signUpScene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleLogin() {
         String username = txt_login_username.getText();
         String password = txt_login_pass.getText();
 
-        // Validate input
         if (username.isEmpty() || password.isEmpty()) {
             showAlert("Validation Error", "Please enter both username and password.");
             return;
-        }
-
-        if (authenticateUser(username, password)) {
-            LoggedInCustomer user = LoggedInCustomer.getInstance();
-            user.setUsername(username);
-            user.setAddress("123 Main Street");
-            user.setPhone("123-456-7890");
-
+        } else if(username.equals("admin") && password.equals("admin123")){
+            goToAdminPage();
+        }else if (authenticateUser(username, password)) {
             showAlert("Login Successful", "Welcome, " + username + "!");
             handleGoToOrderPage();
         } else {
@@ -47,10 +59,9 @@ public class LoginController {
     }
 
     private boolean authenticateUser(String username, String password) {
-        String filePath = "users.txt"; // Update with the actual path to your users.txt file
+        String filePath = "users.txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
-            // Skip header line
             reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] userDetails = line.split(",");
@@ -58,14 +69,19 @@ public class LoginController {
                     String storedUsername = userDetails[0].trim();
                     String storedPassword = userDetails[4].trim();
                     if (storedUsername.equals(username) && storedPassword.equals(password)) {
-                        return true; // User authenticated
+                        LoggedInCustomer user = LoggedInCustomer.getInstance();
+                        user.setUsername(username);
+                        user.setName(userDetails[1]);
+                        user.setAddress(userDetails[3]);
+                        user.setPhone(userDetails[2]);
+                        return true;
                     }
                 }
             }
         } catch (IOException e) {
             showAlert("File Error", "Error reading users file: " + e.getMessage());
         }
-        return false; // Authentication failed
+        return false;
     }
 
     private void showAlert(String title, String message) {
@@ -81,11 +97,34 @@ public class LoginController {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("pizza-order-view.fxml"));
             Scene loginScene = new Scene(fxmlLoader.load());
 
-            // Get the current stage (window)
             Stage stage = (Stage) txt_login_pass.getScene().getWindow();
 
-            // Set the new scene (Login view)
             stage.setScene(loginScene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void goToHomePage(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("home-view.fxml"));
+            Scene profileScene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            stage.setScene(profileScene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToAdminPage() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("admin-view.fxml"));
+            Scene adminScene = new Scene(fxmlLoader.load());
+
+            Stage stage = (Stage) txt_login_pass.getScene().getWindow();
+
+            stage.setScene(adminScene);
         } catch (Exception e) {
             e.printStackTrace();
         }

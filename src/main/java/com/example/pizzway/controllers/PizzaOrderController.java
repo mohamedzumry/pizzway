@@ -12,6 +12,7 @@ import com.example.pizzway.patterns.command.SubmitFeedbackCommand;
 import com.example.pizzway.patterns.decorator.ExtraCheeseDecorator;
 import com.example.pizzway.patterns.decorator.PizzaComponent;
 import com.example.pizzway.patterns.decorator.SpecialPackagingDecorator;
+import com.example.pizzway.patterns.observer.UserNotification;
 import com.example.pizzway.patterns.strategy.CardPaymentStrategy;
 import com.example.pizzway.patterns.strategy.DigitalWalletPaymentStrategy;
 import com.example.pizzway.patterns.strategy.PaymentContext;
@@ -22,10 +23,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Objects;
 
 public class PizzaOrderController {
@@ -78,7 +76,7 @@ public class PizzaOrderController {
         paymentTypeComboBox.getItems().addAll("Digital Wallet", "Card");
 
         // Initialize toppings
-        String[] toppings = {"Pepperoni", "Mushrooms", "Onions", "Olives", "Bacon", "Pineapple"};
+        String[] toppings = {"Genza", "Pepperoni", "Mushrooms", "Onions", "Olives", "Bacon", "Pineapple"};
         for (String topping : toppings) {
             CheckBox checkBox = new CheckBox(topping);
             toppingsVBox.getChildren().add(checkBox);
@@ -130,11 +128,8 @@ public class PizzaOrderController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("profile-view.fxml"));
             Scene profileScene = new Scene(fxmlLoader.load());
-
             // Get the current stage (window)
             Stage stage = (Stage) profileButton.getScene().getWindow();
-
-            // Set the new scene (Login view)
             stage.setScene(profileScene);
         } catch (Exception e) {
             e.printStackTrace();
@@ -241,15 +236,11 @@ public class PizzaOrderController {
                 // Create and execute the PlaceOrderCommand
                 PlaceOrderCommand placeOrderCommand = new PlaceOrderCommand(order);
 
-
-
                 if (Objects.equals(order.getOrderType(), "Pick Up")) {
                     commandInvoker.executeCommand(placeOrderCommand);
                     showAlert(Alert.AlertType.INFORMATION, "Order Placed", "Your order has been placed successfully!, You can pickup your order at our Kalutara outlet when Order is out for delivery.");
-                } else if(Objects.equals(order.getOrderType(), "Delivery")){
-                    // Select payment strategy based on user input
+                } else if (Objects.equals(order.getOrderType(), "Delivery")) {
                     PaymentContext paymentContext = new PaymentContext();
-
                     String paymentType = paymentTypeComboBox.getValue();
                     if ("Card".equals(paymentType)) {
                         paymentContext.setPaymentStrategy(new CardPaymentStrategy("1234-5678-9876-5432", placeOrderCommand, commandInvoker));
@@ -264,10 +255,34 @@ public class PizzaOrderController {
         }
     }
 
+    private int getLastOrderId() {
+        String filePath = "orders.txt";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            reader.readLine();
+            if(reader.readLine() == null){
+                return 0;
+            } else {
+                return reader.readLine().length();
+            }
+        } catch (IOException e) {
+            showAlert("Error", "Error reading orders file: " + e.getMessage());
+        }
+        return 0;
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     private Order createOrder(PizzaComponent finalizedPizza) {
 
-
         return new Order(
+                (getLastOrderId() +1),
                 finalizedPizza,
                 user.getUsername(),
                 user.getName(),
@@ -320,18 +335,12 @@ public class PizzaOrderController {
     }
 
     private double getToppingPrice(String topping) {
-        switch (topping) {
-            case "Pepperoni":
-            case "Mushrooms":
-            case "Onions":
-            case "Olives":
-                return 60.0;
-            case "Bacon":
-            case "Pineapple":
-                return 80.0;
-            default:
-                return 0.0;
-        }
+        return switch (topping) {
+            case "Genza" -> 120.0;
+            case "Pepperoni", "Mushrooms", "Onions", "Olives" -> 60.0;
+            case "Bacon", "Pineapple" -> 80.0;
+            default -> 0.0;
+        };
     }
 
     private void updateTotalPrice(double price) {

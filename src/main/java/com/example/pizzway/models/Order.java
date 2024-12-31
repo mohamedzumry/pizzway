@@ -2,11 +2,15 @@ package com.example.pizzway.models;
 
 
 import com.example.pizzway.patterns.decorator.PizzaComponent;
+import com.example.pizzway.patterns.observer.Observer;
+import com.example.pizzway.patterns.observer.Subject;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Order {
+public class Order implements Subject {
+    private int id;
     private PizzaComponent pizza;
     private String customerUserName;
     private String customerName;
@@ -17,8 +21,10 @@ public class Order {
     private String orderType;
     private String paymentType;
     private String orderStatus;
+    private List<Observer> observers = new ArrayList<>();
 
-    public Order(PizzaComponent pizza, String customerUserName, String customerName, String customerPhone, String customerAddress, double totalPrice, String orderType, String paymentType, String orderStatus) {
+    public Order(int id, PizzaComponent pizza, String customerUserName, String customerName, String customerPhone, String customerAddress, double totalPrice, String orderType, String paymentType, String orderStatus) {
+        this.id = id;
         this.pizza = pizza;
         this.customerUserName = customerUserName;
         this.customerName = customerName;
@@ -32,6 +38,14 @@ public class Order {
     }
 
     // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public PizzaComponent getPizza() {
         return pizza;
     }
@@ -115,6 +129,34 @@ public class Order {
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void unregisterObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String status) {
+        for (Observer observer : observers) {
+            observer.update(status);
+        }
+    }
+
+    // Convert the Order object to a string format for saving
+    public String toFileString() {
+        return getId() + "," + getCustomerUserName() + "," + getOrderSummary() + "," + getCustomerName() + "," + getCustomerAddress() + "," + getCustomerPhone();
+    }
+
+    // Create an Order object from a string format
+//    public static Order fromFileString(String fileString) {
+//        String[] parts = fileString.split(",");
+//        return new Order(parts[0], parts[1], parts[2]);
+//    }
 
     // Method to get a detailed order summary
     public String getOrderSummary() {

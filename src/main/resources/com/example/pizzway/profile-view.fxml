@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="500.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pizzway.controllers.ProfileController">
    <left>
-        <AnchorPane prefHeight="500.0" prefWidth="816.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="594.0" prefWidth="818.0" BorderPane.alignment="CENTER">
             <children>
                 <Label prefHeight="53.0" prefWidth="818.0" style="-fx-background-color: #AD0E0E;" text=" Pizzway" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                     <font>
@@ -23,33 +23,32 @@
                     </font>
                 </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3c3c3" height="138.0" layoutX="8.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="802.0" />
-            <Circle fill="DODGERBLUE" layoutX="90.0" layoutY="137.0" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label layoutX="176.0" layoutY="93.0" prefHeight="58.0" prefWidth="194.0" text="User01">
+            <Label fx:id="profileLabelUsername" layoutX="45.0" layoutY="83.0" prefHeight="58.0" prefWidth="194.0" text="Username">
                <font>
                   <Font name="System Bold" size="31.0" />
                </font>
             </Label>
-            <Label layoutX="177.0" layoutY="125.0" prefHeight="58.0" prefWidth="425.0" text="samplepizzway@gmail.com">
+            <Label fx:id="profileLabelName" layoutX="46.0" layoutY="115.0" prefHeight="58.0" prefWidth="425.0" text="Display Name">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <Button layoutX="603.0" layoutY="109.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="186.0" text="Logout">
+            <Button fx:id="profileButtonLogout" layoutX="571.0" layoutY="98.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="186.0" text="Logout">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="45.0" layoutY="244.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="437.0" text="Change Username">
+            <Button fx:id="profileButtonOrders" layoutX="45.0" layoutY="244.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="437.0" text="Orders">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="45.0" layoutY="314.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="437.0" text="Change Password">
+            <Button fx:id="profileButtonSaved" layoutX="45.0" layoutY="314.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="437.0" text="Saved">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="45.0" layoutY="388.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="435.0" text="Notifications">
+            <Button fx:id="profileButtonNotifications" layoutX="45.0" layoutY="388.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="435.0" text="Notifications">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
@@ -61,6 +60,7 @@
             </Label>
             <Button fx:id="homeButton" layoutX="640.0" layoutY="14.0" mnemonicParsing="false" text="Home" />
             <Button fx:id="orderNowButton" layoutX="729.0" layoutY="14.0" mnemonicParsing="false" text="Order Now" />
+            <Accordion layoutX="163.0" layoutY="207.0" />
             </children>
         </AnchorPane>
    </left>

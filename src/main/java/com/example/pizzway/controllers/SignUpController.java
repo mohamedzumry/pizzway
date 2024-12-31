@@ -36,10 +36,7 @@ public class SignUpController {
     private TextField txt_sign_up_confirm_pass;
 
     @FXML
-    private Button btn_sign_up;
-
-    @FXML
-    private Button btn_sign_up_login;
+    private Button btn_sign_up, homeButton, btn_sign_up_login;
 
     @FXML
     public void initialize() {
@@ -113,6 +110,18 @@ public class SignUpController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    private void goToHomePage(){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("home-view.fxml"));
+            Scene profileScene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+            stage.setScene(profileScene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void clearFields() {

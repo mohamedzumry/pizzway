@@ -3,3 +3,5 @@ Salamana
 ,Pizza with Thick crust, Cheddar cheese, Pesto sauce, toppings: Pepperoni, Mushrooms, Pepperoni, Mushrooms
 Masha Allah
 ,Pizza with Thick crust, Mozzarella cheese, Tomato sauce, toppings: Mushrooms, Onions, Bacon
+My Pizza
+,Pizza with Stuffed crust, Cheddar cheese, Tomato sauce, toppings: Pepperoni, Onions

@@ -5,3 +5,5 @@ Masha Allah
 ,Pizza with Thick crust, Mozzarella cheese, Tomato sauce, toppings: Mushrooms, Onions, Bacon
 saved
 ,Pizza with Thick crust, Cheddar cheese, Barbecue sauce
+My Pizza
+,Pizza with Stuffed crust, Cheddar cheese, Tomato sauce, toppings: Pepperoni, Onions

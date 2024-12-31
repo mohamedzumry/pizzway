@@ -1,0 +1,8 @@
+Order Summary, Order Type, Payment Type, Customer Name, Customer Phone, Customer Address1,zumry,Customer: Mohamed Zumry
+Phone: 07640816161
+AddressKalutara
+Order Time: 2024-12-31T15:38:41.687083600
+Delivery Type: Pick Up
+Payment Type: Card
+Pizza: Pizza with Stuffed crust, Cheddar cheese, Tomato sauce, toppings: Mushrooms, Onions
+Total Price: $520.00,Mohamed Zumry,Kalutara,07640816161

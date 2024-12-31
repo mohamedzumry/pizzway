@@ -1,5 +1,5 @@
 package com.example.pizzway.patterns.observer;
 
-public interface OrderObserver {
+public interface Observer {
     void update(String status);
 }
